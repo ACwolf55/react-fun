@@ -11,17 +11,19 @@ class App2 extends Component {
             number:1,
             word:'word'
         }
+ 
     }
+    
 
     //put your functions between the contructor & render
 add=()=>{
     this.setState({number:this.state.number+1})
+
 }
 
 
 
-
-//the render&return is where you put all your everything to be displayed/html
+//the render & return is where you put all your everything to be displayed/html
 render(){
   return (
     <div className="App2">
