@@ -8,29 +8,28 @@ export default function App3() {
   ///----------------- STate /variable
   STate = variables 
 
-   const [word,setWord] = useState('word')
-
-   const [name,setName] = useState('intialValue')
-
-    const [data,setData]= useState([])
   
+  const [name,setName] = useState('intialValue')
   
-
+  const [data,setData]= useState([])
+  
+  const [word,setWord] = useState('dragon')
     //------------------- funtcionts
 
+    
+    useEffect(()=>{
+      
+      axios.get('./bacssdk').then((res)=>{
+        setData(res.data)
+      })
+      
+    },[])
+    
     const changeWord=()=>{
-      word = 'asdasd'
+     
         setWord('anotherString')
   
     }
-
-    useEffect(()=>{
-   
-      axios.get('./bacssdk').then((res)=>{
-          setData(res.data)
-      })
-        })
-
 
  //--------------------------------- Dsiplay / html
   return (
@@ -39,6 +38,7 @@ export default function App3() {
     <p>App 3</p>
         <button onClick={changeWord}>click me</button>
         <p>{word}</p>
+        <p>word</p>
         <div>
           
     { data.length === 0

@@ -11,7 +11,7 @@ class App2 extends Component {
             number:1,
             word:'word'
         }
- 
+
     }
     
 
