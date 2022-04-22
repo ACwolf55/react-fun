@@ -6,9 +6,10 @@ import {useNavigate} from 'react-router-dom'
 export default function App3() {
 
   ///----------------- STate /variable
-  STate = variables 
+  State = variables 
 
-  
+  const [x ,y ] = useState(z)
+
   const [name,setName] = useState('intialValue')
   
   const [data,setData]= useState([])
@@ -18,17 +19,21 @@ export default function App3() {
 
     
     useEffect(()=>{
+
       
       axios.get('./bacssdk').then((res)=>{
+        console.log(res.data)
         setData(res.data)
+
+      
       })
       
     },[])
     
     const changeWord=()=>{
-     
+    
         setWord('anotherString')
-  
+    
     }
 
  //--------------------------------- Dsiplay / html
